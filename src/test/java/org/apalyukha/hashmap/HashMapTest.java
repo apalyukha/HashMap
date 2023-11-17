@@ -14,4 +14,16 @@ public class HashMapTest {
         assertEquals("hello", map.get(42));
     }
 
+    @Test
+    void get_shouldReturnMappedValues_whenDifferentKeysUsed() {
+        HashMap map = new HashMap();
+
+        map.put(1, "one");
+        map.put(2, "two");
+
+        assertEquals("one", map.get(1));
+        assertEquals("two", map.get(2));
+
+    }
+
 }
