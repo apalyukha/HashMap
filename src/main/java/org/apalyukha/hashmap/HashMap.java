@@ -21,12 +21,6 @@ public class HashMap implements Map {
     }
 
     private int computeIndex(int key) {
-        int index;
-        if (key < 0) {
-            index = -key;
-        } else {
-            index = key;
-        }
-        return index;
+        return Math.abs(key) % values.length;
     }
 }

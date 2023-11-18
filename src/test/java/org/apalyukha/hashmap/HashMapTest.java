@@ -35,4 +35,11 @@ public class HashMapTest {
 
     }
 
+    @Test
+    void map_shouldSupportLargeNumericKeys() {
+        Map map = new HashMap();
+        map.put(Integer.MAX_VALUE, "large");
+
+        assertEquals("large", map.get(Integer.MAX_VALUE));
+    }
 }
