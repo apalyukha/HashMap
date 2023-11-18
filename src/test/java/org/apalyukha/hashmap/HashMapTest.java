@@ -26,4 +26,13 @@ public class HashMapTest {
 
     }
 
+    @Test
+    void map_shouldSupportNegativeKeys() {
+        Map map = new HashMap();
+        map.put(-42, "negative");
+
+        assertEquals("negative", map.get(-42));
+
+    }
+
 }
