@@ -10,17 +10,23 @@ public class HashMap implements Map {
 
     @Override
     public void put(int key, String value) {
-        if (key < 0) {
-            key -= key;
-        }
-        values[key] = value;
+
+        values[computeIndex(key)] = value;
     }
 
     @Override
     public String get(int key) {
+
+        return values[computeIndex(key)];
+    }
+
+    private int computeIndex(int key) {
+        int index;
         if (key < 0) {
-            key -= key;
+            index = -key;
+        } else {
+            index = key;
         }
-        return values[key];
+        return index;
     }
 }
